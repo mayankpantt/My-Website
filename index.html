@@ -1,0 +1,347 @@
+form reset
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Website</title>
+<style>
+    /* Resetting default margin and padding */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Global Styles */
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+    }
+
+    /* Header Styles */
+    header {
+        background-color: #333;
+        color: #ffffff;
+        padding: 20px;
+        text-align: center;
+        font-size: 30px;
+        font-family: cursive;
+    }
+
+    /* Navigation Styles */
+    nav {
+        background-color: #444;
+        padding: 10px;
+        text-align: center;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+    /* Hero Section Styles */
+    #hero {
+        background-image: radial-gradient(circle at center center, transparent, rgb(0, 0, 0)), linear-gradient(620deg, rgba(198, 198, 198, 0.05) 0%, rgba(198, 198, 198, 0.05) 50%, rgba(11, 11, 11, 0.05) 50%, rgba(11, 11, 11, 0.05) 100%), linear-gradient(384deg, rgba(54, 54, 54, 0.05) 0%, rgba(54, 54, 54, 0.05) 50%, rgba(132, 132, 132, 0.05) 50%, rgba(132, 132, 132, 0.05) 100%), linear-gradient(337deg, rgba(57, 57, 57, 0.05) 0%, rgba(57, 57, 57, 0.05) 50%, rgba(128, 128, 128, 0.05) 50%, rgba(128, 128, 128, 0.05) 100%), linear-gradient(652deg, rgba(97, 97, 97, 0.05) 0%, rgba(97, 97, 97, 0.05) 50%, rgba(85, 85, 85, 0.05) 50%, rgba(85, 85, 85, 0.05) 100%), linear-gradient(468deg, rgba(237, 237, 237, 0.05) 0%, rgba(237, 237, 237, 0.05) 50%, rgba(211, 211, 211, 0.05) 50%, rgba(211, 211, 211, 0.05) 100%), linear-gradient(462deg, rgba(168, 168, 168, 0.05) 0%, rgba(168, 168, 168, 0.05) 50%, rgba(32, 32, 32, 0.05) 50%, rgba(32, 32, 32, 0.05) 100%), linear-gradient(335deg, rgba(225, 225, 225, 0.05) 0%, rgba(225, 225, 225, 0.05) 50%, rgba(228, 228, 228, 0.05) 50%, rgba(228, 228, 228, 0.05) 100%), linear-gradient(325deg, rgba(104, 104, 104, 0.05) 0%, rgba(104, 104, 104, 0.05) 50%, rgba(43, 43, 43, 0.05) 50%, rgba(43, 43, 43, 0.05) 100%), radial-gradient(circle at center center, hsl(290, 5%, 8%), hsl(290, 5%, 8%));
+        background-size: cover;
+        background-position: center;
+        padding: 60px 0;
+        text-align: center;
+        color: #fff;
+    }
+
+    #hero .container {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    #hero h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    #hero p {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    #hero .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        border: none;
+        background-color: #333;
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        border-radius: 5px;
+    }
+
+    #hero .btn:hover {
+        background-color: #555;
+    }
+
+    /* About Section Styles */
+    .about {
+        background-color: #616A6B;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .about h2{
+        font-size: 30px;
+    }
+
+    /* Projects Section Styles */
+    .projects {
+        background-color: #99A3A4 ;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .projects h2{
+        font-size: 30px;
+    }
+
+    /* New Section Styles */
+    .new-section {
+        background-color: #B2BABB ;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .new-section h2{
+        font-size: 30px;
+    }
+
+    /* Footer Styles */
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Form Styles */
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    /* Modal Styles */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        padding-top: 60px;
+    }
+
+    /* Modal Content */
+    .modal-content {
+        background-image: radial-gradient(circle at 13% 47%, rgba(140, 140, 140,0.03) 0%, rgba(140, 140, 140,0.03) 25%,transparent 25%, transparent 100%),radial-gradient(circle at 28% 63%, rgba(143, 143, 143,0.03) 0%, rgba(143, 143, 143,0.03) 16%,transparent 16%, transparent 100%),radial-gradient(circle at 81% 56%, rgba(65, 65, 65,0.03) 0%, rgba(65, 65, 65,0.03) 12%,transparent 12%, transparent 100%),radial-gradient(circle at 26% 48%, rgba(60, 60, 60,0.03) 0%, rgba(60, 60, 60,0.03) 6%,transparent 6%, transparent 100%),radial-gradient(circle at 97% 17%, rgba(150, 150, 150,0.03) 0%, rgba(150, 150, 150,0.03) 56%,transparent 56%, transparent 100%),radial-gradient(circle at 50% 100%, rgba(25, 25, 25,0.03) 0%, rgba(25, 25, 25,0.03) 36%,transparent 36%, transparent 100%),radial-gradient(circle at 55% 52%, rgba(69, 69, 69,0.03) 0%, rgba(69, 69, 69,0.03) 6%,transparent 6%, transparent 100%),linear-gradient(90deg, rgb(255,255,255),rgb(255,255,255));        margin: 5% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 15%; /* Could be more or less, depending on screen size */
+    }
+
+    /* Close Button */
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* Review Section Styles */
+    .review {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Input for Review Styles */
+    .input-review {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+ /* GitHub logo size */
+    #connectInfo img {
+        width: 50px; /* Adjust the width as needed */
+    }
+
+</style>
+</head>
+<body>
+    <header>
+        <h1><u>Bookworm Insight</u></h1>
+        <p></p>
+    </header>
+    
+    <nav>
+        <a href="#" onclick="showContact() ">Contact</a>
+        <a href="#" onclick="openConnectModal()">Connect</a>
+    </nav>
+
+
+    <section id="hero">
+        <div class="container">
+            <h1>Welcome to my Website</h1>
+            <u><p> Discover the fascinating world of book reviews </p></u>
+        </div>
+    </section>
+
+    <div class="about">
+        <h2><u><b>About</b></u></h2>
+        <!-- Add About Section Content Here -->
+        At Bookworm Insight, I'm passionate about literature and the power of storytelling. My aim is to create a website where I can post reviews of all the books that I read.
+        Join me as I embark on a literary adventure together. Welcome to Literary Lens, where the love of books knows no bounds.
+    </div>
+
+    <div class="projects">
+        <h2><u><b>Project</b></u></h2>
+        <!-- Add Projects Section Content Here -->
+        As part of my academic journey, I am excited to present this website as my minor project. Designed and developed by Mayank Pant(CSE-21), this project represents my dedication to learning and applying web development skills in a practical setting. Through this project, I aimed to showcase my ability to create a functional and aesthetically pleasing website while exploring the fascinating world of book reviews.
+        
+    </div>
+
+    <!-- New Section -->
+    <div class="new-section">
+        <h2><u><b>Post The Review</b></u></h2>
+        <!-- Post The Book Review button -->
+        <a href="#" class="btn" onclick="openForm()">Review</a>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 My Website. All Rights Reserved.</p>
+    </footer>
+
+    <!-- The Modal for Connect -->
+    <div id="connectModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeConnectModal()">&times;</span>
+            <div id="connectInfo">
+                GitHub: <a href='https://github.com/mayankpantt' target="_blank"><img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub Profile"></a><br>
+                Instagram: <a href='https://www.instagram.com/mayankpantt?igsh=NXF0bGh6Zjl3NzY=' target="_blank"><img src="https://s.gr-assets.com/assets/site_footer/footer_instagram-d59e3887020f12bcdb12e6c539579d85.svg" alt="Instagram Profile"></a><br>
+                LinkedIn: <a href='https://www.linkedin.com/in/mayank-pant-412143227?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' target="_blank"><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png" alt="LinkedIn Profile"></a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- The Modal for Review -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeForm()">&times;</span>
+            <form enctype="multipart/form-data" action="https://formbold.com/s/94xGX" method="POST" class="mx-auto w-full max-w-[570px] rounded-[10px] border border-stroke bg-white p-10 themeOne" onsubmit="resetForm()">
+                <h3 class="static !font-bold text-xl font-semibold leading-tight text-black sm:text-[28px]">
+                    <u><b>Review Form</b></u>
+                </h3><br>
+                <label><b>Book Name:</b></label>
+                <input type="text" name="bookname" placeholder="Enter the Book Name"> <br> <br>
+                <label><b>Author:</b></label>
+                <input type="text" name="authorname" placeholder="Enter the Author Name"> <br> <br>
+                <label><b>Review:</b></label>
+                <br>
+                <textarea id="review" name="review" cols="100" rows="5" placeholder="Write the Review"></textarea>
+                <br> <br>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        function showContact() {
+            var contactInfo = "Name: Mayank Pant\nE-mail: pantmohit2002@gmail.com\nPhone Number: 7465090390";
+            alert(contactInfo);
+        }
+
+        function openConnectModal() {
+            var modal = document.getElementById("connectModal");
+            modal.style.display = "block";
+        }
+
+        function closeConnectModal() {
+            var modal = document.getElementById("connectModal");
+            modal.style.display = "none";
+        }
+        
+        // Get the modal for Review
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal for Review
+        var btn = document.getElementsByClassName("btn")[0];
+
+        // Get the <span> element that closes the modal for Review
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button for Review, open the modal for Review
+        function openForm() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x) for Review, close the modal for Review
+        function closeForm() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal for Review, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Reset the form upon submission
+        function resetForm() {
+            document.getElementById("reviewForm").reset();
+        }
+    </script>
+</body>
+</html>
